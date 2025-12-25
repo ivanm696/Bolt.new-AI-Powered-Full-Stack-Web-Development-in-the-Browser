@@ -1,85 +1,110 @@
+[![Bolt Open Source Codebase](./public/social_preview_index.jpg)](https://bolt.new)
 
-Navigation Menu
-bolt.new
+> Welcome to the **Bolt** open-source codebase! This repo contains a simple example app using the core components from bolt.new to help you get started building **AI-powered software development tools** powered by StackBlitz’s **WebContainer API**.
 
-Code
-Pull requests
-bolt.new
-/CONTRIBUTING.md
-kKaskak
-kKaskak
-last year
-110 lines (69 loc) · 5.26 KB
+### Why Build with Bolt + WebContainer API
 
-Preview
+By building with the Bolt + WebContainer API you can create browser-based applications that let users **prompt, run, edit, and deploy** full-stack web apps directly in the browser, without the need for virtual machines. With WebContainer API, you can build apps that give AI direct access and full control over a **Node.js server**, **filesystem**, **package manager** and **dev terminal** inside your users browser tab. This powerful combination allows you to create a new class of development tools that support all major JavaScript libraries and Node packages right out of the box, all without remote environments or local installs.
 
-Code
+### What’s the Difference Between Bolt (This Repo) and [Bolt.new](https://bolt.new)?
 
-Blame
-Bolt Open Source Codebase
+- **Bolt.new**: This is the **commercial product** from StackBlitz—a hosted, browser-based AI development tool that enables users to prompt, run, edit, and deploy full-stack web applications directly in the browser. Built on top of the [Bolt open-source repo](https://github.com/stackblitz/bolt.new) and powered by the StackBlitz **WebContainer API**.
 
-Welcome to the Bolt open-source codebase! This repo contains a simple example app using the core components from bolt.new to help you get started building AI-powered software development tools powered by StackBlitz’s WebContainer API.
+- **Bolt (This Repo)**: This open-source repository provides the core components used to make **Bolt.new**. This repo contains the UI interface for Bolt as well as the server components, built using [Remix Run](https://remix.run/). By leveraging this repo and StackBlitz’s **WebContainer API**, you can create your own AI-powered development tools and full-stack applications that run entirely in the browser.
 
-Why Build with Bolt + WebContainer API
-By building with the Bolt + WebContainer API you can create browser-based applications that let users prompt, run, edit, and deploy full-stack web apps directly in the browser, without the need for virtual machines. With WebContainer API, you can build apps that give AI direct access and full control over a Node.js server, filesystem, package manager and dev terminal inside your users browser tab. This powerful combination allows you to create a new class of development tools that support all major JavaScript libraries and Node packages right out of the box, all without remote environments or local installs.
+# Get Started Building with Bolt
 
-What’s the Difference Between Bolt (This Repo) and Bolt.new?
-Bolt.new: This is the commercial product from StackBlitz—a hosted, browser-based AI development tool that enables users to prompt, run, edit, and deploy full-stack web applications directly in the browser. Built on top of the Bolt open-source repo and powered by the StackBlitz WebContainer API.
+Bolt combines the capabilities of AI with sandboxed development environments to create a collaborative experience where code can be developed by the assistant and the programmer together. Bolt combines [WebContainer API](https://webcontainers.io/api) with [Claude Sonnet 3.5](https://www.anthropic.com/news/claude-3-5-sonnet) using [Remix](https://remix.run/) and the [AI SDK](https://sdk.vercel.ai/).
 
-Bolt (This Repo): This open-source repository provides the core components used to make Bolt.new. This repo contains the UI interface for Bolt as well as the server components, built using Remix Run. By leveraging this repo and StackBlitz’s WebContainer API, you can create your own AI-powered development tools and full-stack applications that run entirely in the browser.
+### WebContainer API
 
-Get Started Building with Bolt
-Bolt combines the capabilities of AI with sandboxed development environments to create a collaborative experience where code can be developed by the assistant and the programmer together. Bolt combines WebContainer API with Claude Sonnet 3.5 using Remix and the AI SDK.
+Bolt uses [WebContainers](https://webcontainers.io/) to run generated code in the browser. WebContainers provide Bolt with a full-stack sandbox environment using [WebContainer API](https://webcontainers.io/api). WebContainers run full-stack applications directly in the browser without the cost and security concerns of cloud hosted AI agents. WebContainers are interactive and editable, and enables Bolt's AI to run code and understand any changes from the user.
 
-WebContainer API
-Bolt uses WebContainers to run generated code in the browser. WebContainers provide Bolt with a full-stack sandbox environment using WebContainer API. WebContainers run full-stack applications directly in the browser without the cost and security concerns of cloud hosted AI agents. WebContainers are interactive and editable, and enables Bolt's AI to run code and understand any changes from the user.
+The [WebContainer API](https://webcontainers.io) is free for personal and open source usage. If you're building an application for commercial usage, you can learn more about our [WebContainer API commercial usage pricing here](https://stackblitz.com/pricing#webcontainer-api).
 
-The WebContainer API is free for personal and open source usage. If you're building an application for commercial usage, you can learn more about our WebContainer API commercial usage pricing here.
+### Remix App
 
-Remix App
-Bolt is built with Remix and deployed using CloudFlare Pages and CloudFlare Workers.
+Bolt is built with [Remix](https://remix.run/) and
+deployed using [CloudFlare Pages](https://pages.cloudflare.com/) and
+[CloudFlare Workers](https://workers.cloudflare.com/).
 
-AI SDK Integration
-Bolt uses the AI SDK to integrate with AI models. At this time, Bolt supports using Anthropic's Claude Sonnet 3.5. You can get an API key from the Anthropic API Console to use with Bolt. Take a look at how Bolt uses the AI SDK
+### AI SDK Integration
 
-Prerequisites
+Bolt uses the [AI SDK](https://github.com/vercel/ai) to integrate with AI
+models. At this time, Bolt supports using Anthropic's Claude Sonnet 3.5.
+You can get an API key from the [Anthropic API Console](https://console.anthropic.com/) to use with Bolt.
+Take a look at how [Bolt uses the AI SDK](https://github.com/stackblitz/bolt.new/tree/main/app/lib/.server/llm)
+
+## Prerequisites
+
 Before you begin, ensure you have the following installed:
 
-Node.js (v20.15.1)
-pnpm (v9.4.0)
-Setup
-Clone the repository (if you haven't already):
+- Node.js (v20.15.1)
+- pnpm (v9.4.0)
+
+## Setup
+
+1. Clone the repository (if you haven't already):
+
+```bash
 git clone https://github.com/stackblitz/bolt.new.git
-Install dependencies:
+```
+
+2. Install dependencies:
+
+```bash
 pnpm install
-Create a .env.local file in the root directory and add your Anthropic API key:
+```
+
+3. Create a `.env.local` file in the root directory and add your Anthropic API key:
+
+```
 ANTHROPIC_API_KEY=XXX
+```
+
 Optionally, you can set the debug level:
 
+```
 VITE_LOG_LEVEL=debug
-Important: Never commit your .env.local file to version control. It's already included in .gitignore.
+```
 
-Available Scripts
-pnpm run dev: Starts the development server.
-pnpm run build: Builds the project.
-pnpm run start: Runs the built application locally using Wrangler Pages. This script uses bindings.sh to set up necessary bindings so you don't have to duplicate environment variables.
-pnpm run preview: Builds the project and then starts it locally, useful for testing the production build. Note, HTTP streaming currently doesn't work as expected with wrangler pages dev.
-pnpm test: Runs the test suite using Vitest.
-pnpm run typecheck: Runs TypeScript type checking.
-pnpm run typegen: Generates TypeScript types using Wrangler.
-pnpm run deploy: Builds the project and deploys it to Cloudflare Pages.
-Development
+**Important**: Never commit your `.env.local` file to version control. It's already included in .gitignore.
+
+## Available Scripts
+
+- `pnpm run dev`: Starts the development server.
+- `pnpm run build`: Builds the project.
+- `pnpm run start`: Runs the built application locally using Wrangler Pages. This script uses `bindings.sh` to set up necessary bindings so you don't have to duplicate environment variables.
+- `pnpm run preview`: Builds the project and then starts it locally, useful for testing the production build. Note, HTTP streaming currently doesn't work as expected with `wrangler pages dev`.
+- `pnpm test`: Runs the test suite using Vitest.
+- `pnpm run typecheck`: Runs TypeScript type checking.
+- `pnpm run typegen`: Generates TypeScript types using Wrangler.
+- `pnpm run deploy`: Builds the project and deploys it to Cloudflare Pages.
+
+## Development
+
 To start the development server:
 
+```bash
 pnpm run dev
+```
+
 This will start the Remix Vite development server.
 
-Testing
+## Testing
+
 Run the test suite with:
 
+```bash
 pnpm test
-Deployment
+```
+
+## Deployment
+
 To deploy the application to Cloudflare Pages:
 
+```bash
 pnpm run deploy
-Make sure you have the necessary permissions and Wrangler is correctly configured for your Cloudflare account.
+```
+
+Make sure you have the necessary permissions and Wrangler is correctly configured for your Cloudflare aaccount
