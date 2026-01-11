@@ -154,8 +154,3 @@ Release Process
 Safeguards:
 
 Branch protection requires PR reviews
-All CI checks must pass
-Direct pushes to main are blocked
-Linear history enforced
-Attribution
-This project is based on Bolt.new by StackBlitz, licensed under MIT.
